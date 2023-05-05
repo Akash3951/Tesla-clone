@@ -1,32 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
-import Fade from 'react-reveal/Fade';
+import Fade from 'react-awesome-reveal';
+import 'animate.css';
+
 
 function Section({title, description, leftBtnText, rightBtnText, background}) {
   return (
     <Wrap bgImage={background}>
-      <Fade bottom>
+      {/* <Fade bottom>                                 REACT-REVEAL METHOD */}
         <ItemText>
-          <h1>{title}</h1>
-          <p>{description}</p>
+          <h1 className="animate__animated animate__fadeInUp">{title}</h1>
+          <p className="animate__animated animate__fadeInUp">{description}</p>
         </ItemText>
-      </Fade>
+      {/* </Fade> */}
       <Buttons>
-        <Fade bottom>
+        {/* <Fade bottom>                                 REACT REVEAL METHOD*/}
           <ButtonGroup>
-            <LeftButton>
+            <LeftButton className="">
               {leftBtnText}
             </LeftButton>
             {rightBtnText && 
-              <RightButton>
+              <RightButton className="">
                 {rightBtnText}
               </RightButton>
             }          
           </ButtonGroup>
-          <DownArrow src='/images/down-arrow.svg'>
+          <DownArrow src='/images/down-arrow.svg' className="">
 
           </DownArrow>
-        </Fade>
+        {/* </Fade> */}
       </Buttons>
     </Wrap>
   )
